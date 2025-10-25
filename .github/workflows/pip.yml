@@ -17,4 +17,4 @@ jobs:
         with:
           python-version: 3.x
       - run: python3 -m pip install --upgrade pip
-      - run: pip install ${{ matrix.os }}
+      - run: pip install ${{ matrix.module }}
