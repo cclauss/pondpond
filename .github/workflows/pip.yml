@@ -16,9 +16,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: 3.x
-      - run: python3 -m pip install --upgrade pip
-      - run: pip install ${{ matrix.module }}
+      # pip install works.
+      # - run: python3 -m pip install --upgrade pip
+      #- run: pip install ${{ matrix.module }}
       - uses: astral-sh/setup-uv@v7
-        with:
-          activate-environment: true
-      - run: uv pip install ${{ matrix.module }}
+      # uv pip install works.
+      #  with:
+      #    activate-environment: true
+      # - run: uv pip install ${{ matrix.module }}
+      # uv pip install fails!
+      - run: uv add ${{ matrix.module }}
+      - run: uv sync --upgrade
