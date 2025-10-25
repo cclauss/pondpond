@@ -25,5 +25,5 @@ jobs:
       #    activate-environment: true
       # - run: uv pip install ${{ matrix.module }}
       # uv pip install fails!
-      - run: uv add ${{ matrix.module }}
+      - run: uv add --dev ${{ matrix.module }}
       - run: uv sync --upgrade
